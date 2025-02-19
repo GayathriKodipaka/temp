@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    changing color of text<br><br>
+    <input type="text" id="color" placeholder="input color"></input>
+    <select id="bcolor">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+    </select>
+        <button type="submit" onclick="change()">Submit</button><br><br>
+    <hr>
+    <div id="data">Hello world</divdiv>
+    <script>
+        function change(){
+            let co=document.getElementById("color").value;
+            let bco=document.getElementById("bcolor").value;
+            document.getElementById("data").style.backgroundColor =bco;
+            document.getElementById("data").style.color=co;
+
+        }
+    </script>
+</body>
+</html>

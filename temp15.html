@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let value=0;
+        function increment(){
+            value++;
+            data.innerHTML = value
+        }
+        function decrement(){
+            if(value>0){
+            value--;
+            }
+            data.innerHTML = value
+        }
+        function cal(){
+            let a1=document.getElementById(a1);
+            let a2=document.getElementById(a2);
+            data.innerHTML=`${a1} + ${a2} = ${a1+a2}`
+            data.innerHTML=`${a1}-${a2}=${a1-a2}`
+            data.innerHTML=`${a1}*${a2}=${a1*a2}`
+            data.innerHTML=`${a1}/${a2}=${a1/a2}`
+        }
+    </script>
+</head>
+<body>
+    <button onclick="decrement()">-</button>
+    <div id="data">0</div>
+    <button onclick="increment()">+</button>
+    <input type="text" id="a1"placeholder="a1"><br><br>
+    <input type="text" id="a2"placeholder="a2"><br><br>
+    <button type="submit" onClick="cal()">submit</button>
+    <div id="data"></div>
+</body>
+</html>

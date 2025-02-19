@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script>
+        function showData(){
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            if(email=="jhon@gmail.com" && password=="1234")
+            {
+                data.innerHTML='Welcome Jhon'
+            }
+            else{
+                data.innerHTML='Access Denied'
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Login Form</p>
+    <input type="text" id="email" placeholder="Email Address"><br><br>
+    <input type="password" id="password" placeholder="password"><br><br>
+    <button onclick="shoeData()">Registration</button>
+    <hr>
+    <div id="data">Testing</div>
+</body>
+</html>
