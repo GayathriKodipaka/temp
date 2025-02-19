@@ -4,33 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-color: #eeeeee;
+        }
+        .container{
+            background-color: white;
+            border-radius: 20px;
+            padding:10px;
+            width: 400px;
+            margin:auto;
+
+        }
+        .row{
+            display:flex;
+            justify-content: center;
+        }
+        .title{
+            font-size: 20px;
+            margin-top: 30px;
+        }
+        .header{
+            font-size: 60px;
+            color:blue;
+            font-weight: bold;
+            font-family: Verdana;
+        }
+        .caption{
+            font-size: 10px;
+            color: gray;
+            justify-self: center;
+        }
+        input,select{
+            width: 100%;
+            margin: 5px;
+            border-radius: 5px;
+            padding:5px;
+            border:1px solid gray;
+        }
+        button{
+            color: white;
+            background-color: green;
+            font-size: 20px;
+            padding:10px;
+            border-radius: 15px;
+
+        }
+        .leftcon{
+            font-size: 12px;
+            color: silver;
+        }
+        
+        .rad{
+            border: 1px solid grey;
+            display:flex;
+            justify-content: space-between;
+            border-radius: 5px;
+            padding: 5px;
+
+            width: 100%;
+        }
+        button{
+            color:white;
+            background-color: green;
+            font-size: 20px;
+            padding: 5px;
+            justify-self: center;
+            align-self:center;
+            border: none;
+            width: 150px;
+        }
+    </style>
+    
 </head>
 <body>
-    <center>
-    <p>facebook</p>
-    <div id="reg">
-    <form>
-        <h3>Create a new account</h3>
-        <h5>It's quick and easy</h5>
-        <input type="text" id="fname" placeholder="Firstname">
+    
+    <div class="container">
+        <div class="row">
+        <div class="header">facebook</div>
+        </div>
+        <div class="row">
+        <div>
+            <div class="title">Create a new account</div>
+            <div class="caption">It's quick and easy</div>
+        </div>
+        </div>
+        <div class="row">
+        <input type="text" id="fname" placeholder="Firstname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" id="Lname" placeholder="Surname">
-        <p >Date of birth</p>
-        <select id="day" value="DAy"></select>
-        <select id="day" placeholder="Day"></select>
-        <select id="day" placeholder="Day"></select>
-        <p>Gender</p>
-        <input type="radio" id="gen">Female</input>
-        <input type="radio" id="gen">Male</input>
-        <input type="radio" id="gen">Custome</input>
-        <input type="text" id="mobilemail" placeholder="Mobile number or email address"></input>
-        <input type="password" id="password" placeholder="New password0"></input>
-        <p>People who use our services may have uploded your contact information to Facebook</p>
+        </div><br>
+        <div class="row" style="justify-content: start;">
+        <div class="leftcon">Date of Birth</div>
+        </div>
+        <div class="row">
+        <select id="day" ></select>
+        <select id="month" ></select>
+        <select id="year"></select>
+        </div><br>
+        <div class="row" style="justify-content: start;">
+        <div class="leftcon">Gender</div>
+        </div>
+        <div class="row">
+        <div class="rad">Female<input type="radio" id="gen"></input></div>
+        <div class="rad">Male<input type="radio" id="gen"></input></div>
+        <div class="rad">Custome<input type="radio" id="gen"></input></div>
+        </div><br>
+        <div class="row">
+        <input type="text" id="mobilemail" placeholder="Mobile number or email address"></input><br>
+        </div>
+        <div class="row">
+        <input type="password" id="password" placeholder="New password"></input>
+        </div>
+        <div class="row">
+        <div class="caption">People who use our services may have uploded your contact information to Facebook
         <p href="#">Learn more.</p>
         <p>By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.</p>
-        <button>
-    </form>
-
+        <center>
+        <button type="Submit" id="sub">Submit</button>
+        </center>
+        </div>
+        <script>
+            let str=""
+            for(let i=1; i<=31;i++){
+                str +=`<option>${i}<option>`
+            }
+            day.innerHTML=str;
+            
+        </script>
     </div>
-    </center>
 </body>
 </html>
