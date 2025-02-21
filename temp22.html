@@ -6,15 +6,36 @@
     <title>Document</title>
   </head>
   <body>
-    <img src="assets/ball.jpeg" width="400px" id="ball">
+    <img src="assets/ball.jpeg" width="200px" id="ball">
     <script>
         ball.style.position = "absolute";
       let b=document.body;
       let down=0;
+      let left=0;
       b.onkeydown = (e) => {
        //root.innerHTML = e.key
-       down=down+5;
+       console.log(e.key)
+       if(e.key == "ArrowDown")
+       {
+        down=down+5;
        ball.style.top= down+"px";
+       }
+       if(e.key == "ArrowRight")
+       {
+        left=left+5;
+       ball.style.left= left+"px";
+       }
+       if(e.key == "ArrowUp")
+       {
+        down=down-5;
+       ball.style.top= down+"px";
+       }
+       if(e.key == "ArrowLeft")
+       {
+        left=left+-5;
+       ball.style.left= left+"px";
+       }
+       console.log(down)
        }
        //root.innerHTML = "Hello World"
     </script>
