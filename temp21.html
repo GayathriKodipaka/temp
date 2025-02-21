@@ -78,7 +78,6 @@
     
 </head>
 <body>
-    
     <div class="container">
         <div class="row">
         <div class="header">facebook</div>
@@ -88,8 +87,34 @@
             <div class="title">Create a new account</div>
             <div class="caption">It's quick and easy</div>
         </div>
+    </div>
+        <hr>
+        <div id="root"></div>
+    <script>
+         const showData = () => {
+        let firstname = document.getElementById("fname").value;
+        let surname = document.getElementById("Lname").value;
+        let gender = documnet.getElementsByName("gen");
+        let prnoun = document.getElementById("pselect").value;
+        let mobilemail = document.getElementById("mobilemail").value;
+        let pass=document.getElementById("password").value;
+        // let g="";
+        // if(gender[0].checked) g="Female";
+        // if(gender[1].checked) g="Male";
+        // if(gender[2].checked) g=prnoun;
+        
+        let str = `
+        <div>
+          Name:${firstname} ${surname}
+          Username:${mobilemail}
+          Password:${pass}
+          Gender:
         </div>
-        <div class="row">
+        `;
+        document.getElementById(root).innerHTML = str;
+      };
+    const showForm = () =>{
+            let str=`<div class="row">
         <input type="text" id="fname" placeholder="Firstname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" id="Lname" placeholder="Surname">
         </div><br>
@@ -105,10 +130,18 @@
         <div class="leftcon">Gender</div>
         </div>
         <div class="row">
-        <div class="rad">Female<input type="radio" id="gen"></input></div>
-        <div class="rad">Male<input type="radio" id="gen"></input></div>
-        <div class="rad">Custome<input type="radio" id="gen"></input></div>
+        <div class="rad">Female<input type="radio" name="gen" onclick="togglep()"></input></div>
+        <div class="rad">Male<input type="radio" name="gen" onclick="togglep()"></input></div>
+        <div class="rad">Custome<input type="radio" name="gen" onclick="togglep()"></input></div>
         </div><br>
+        <div class="row">
+            <select id="pselect" Style="display: none;">
+                <option 1>Select your pronoun
+                <option 2>She:"Wish her a happy birthday"
+                <option 3>He:"Wish him a happy birthday"
+                <option 4>they:"Wish them a happy birthday"
+            </select>
+        </div>
         <div class="row">
         <input type="text" id="mobilemail" placeholder="Mobile number or email address"></input><br>
         </div>
@@ -119,18 +152,38 @@
         <div class="caption">People who use our services may have uploded your contact information to Facebook
         <p href="#">Learn more.</p>
         <p>By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.</p>
+        
         <center>
-        <button type="Submit" id="sub">Submit</button>
+        <button type="button" onclick="showData()">Submit</button>
         </center>
-        </div>
-        <script>
+        </div>`;
+        root.innerHTML = str;
+        };
+        showForm();
             let str=""
             for(let i=1; i<=31;i++){
-                str +=`<option>${i}<option>`
+                str +=`<option>${i}</option>`
             }
             day.innerHTML=str;
-            
+            let str1=""
+            for(let i=1; i<=12;i++){
+                str1 +=`<option>${i}</option>`
+            }
+            month.innerHTML=str1;
+            let str2=""
+            for(let i=1906; i<=2025;i++){
+                str2 +=`<option>${i}</option>`
+            }
+            year.innerHTML=str2;
+            const togglep = ()=>{
+                let p = document.getElementsByName("gen")
+                if(p[2].checked){
+                    pselect.style.display = "block";
+                }
+                else{
+                    pselect.style.display = "none";
+                }
+            };
         </script>
-    </div>
 </body>
 </html>
