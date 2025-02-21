@@ -140,7 +140,7 @@
         i = "";
         if (interest[0].checked) i += "Sports ";
         if (interest[1].checked) i += "Music ";
-        if (interest[2].checked) i += "Movie";
+        if (interest[2].checked) i += " Movies";
         let str = `
           <h3>Verify your information</h3>
           <p>Name:${firstname} ${surname}</p>
@@ -238,15 +238,21 @@
       <div class="row">
         <div class="radioClass">
           <div><label> Sports</label></div>
-          <div><input type="checkbox" name="interest"  /></div>
+          <div><input type="checkbox" ${
+            i === i+"sports " && "checked"
+          } name="interest"  /></div>
         </div>
         <div class="radioClass">
           <div><label> Music</label></div>
-          <div><input type="checkbox" name="interest"  /></div>
+          <div><input type="checkbox" ${
+            i === i+"Music " && "checked"
+          } name="interest"  /></div>
         </div>
         <div class="radioClass">
           <div><label> Movies</label></div>
-          <div><input type="checkbox" name="interest" " /></div>
+          <div><input type="checkbox" ${
+            i === i+"Movie " && "checked"
+          } name="interest" " /></div>
         </div>
       </div>
 
