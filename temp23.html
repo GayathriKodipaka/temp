@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="root"></div>
     <img src="assets/ball.jpeg" width="100px" id="ball">
     <img src="assets/net.jpeg" width="200px" height="100px" id="net" >
     <script>
@@ -56,7 +57,12 @@
        }
        console.log(down)
        }
-       
+       let i=0;
+       if(ball.to-top==0 && l-left==0)
+       {
+        i++;
+        root.innerHTML="Game Score:"+i;
+       }
 
     </script>
 </body>
